@@ -154,7 +154,7 @@ local function PostSpawnPlayer()
     Wait(800)
     DoScreenFadeIn(2000)
     Wait(50)
-    exports["nodus-backitems"]:refreshProps()
+    
 end
 
 local function ApartmentHousingSpawnPlayer()
@@ -241,7 +241,7 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
         TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
         Wait(50)
-        exports["nodus-backitems"]:refreshProps()
+        
     elseif type == "owned-apartment" then
         ApartmentHousingSpawnPlayer()
         TriggerEvent('apartments:client:EnterApartments')
@@ -249,7 +249,7 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
         Wait(50)
-        exports["nodus-backitems"]:refreshProps()
+        
     elseif type == "normal" then
         local pos = QB.Spawns[location].coords
         SetCams(pos)
